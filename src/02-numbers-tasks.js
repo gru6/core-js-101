@@ -189,7 +189,7 @@ function roundToPowerOfTen(num, pow) {
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
  *
- * @param {number} n
+ * @param {number}
  * @return {bool}
  *
  * @example:
@@ -202,10 +202,16 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
-}
 
+function isPrime(n) {
+  if (n <= 1) return false;
+  if (n % 2 === 0 && n > 2) return false;
+  const s = Math.sqrt(n);
+  for (let i = 3; i <= s; i += 2) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
 /**
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
@@ -221,8 +227,9 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  if (Number(value)) return value;
+  return def;
 }
 
 module.exports = {
