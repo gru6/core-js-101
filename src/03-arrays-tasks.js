@@ -439,8 +439,23 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  // eslint-disable-next-line consistent-return
+  function compare(a, b) {
+    const countryA = a.country.toLowerCase(); const
+      countryB = b.country.toLowerCase();
+    const cityA = a.city.toLowerCase(); const
+      cityB = b.city.toLowerCase();
+    if (countryA < countryB) { return -1; }
+    if (countryA > countryB) { return 1; }
+    if (countryA === countryB) {
+      if (cityA < cityB) { return -1; }
+      if (cityA > cityB) { return 1; }
+      return 0;
+    }
+  }
+
+  return arr.sort(compare);
 }
 
 /**
@@ -542,6 +557,7 @@ function distinct(arr) {
  */
 function group(/* array, keySelector, valueSelector */) {
   throw new Error('Not implemented');
+  /*  return array.filter((obj) => obj.country === keySelector).map((obj) => obj.city); */
 }
 
 
