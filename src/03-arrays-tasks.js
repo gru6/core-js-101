@@ -557,7 +557,6 @@ function distinct(arr) {
  */
 function group(/* array, keySelector, valueSelector */) {
   throw new Error('Not implemented');
-  /*  return array.filter((obj) => obj.country === keySelector).map((obj) => obj.city); */
 }
 
 

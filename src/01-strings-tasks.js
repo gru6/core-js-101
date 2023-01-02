@@ -1,5 +1,3 @@
-/* eslint-disable */
-/* eslint-disable prefer-template */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -209,7 +207,6 @@ function getRectangleString(width, height) {
   const middle = `│${' '.repeat(width - 2)}│\n`;
   const bottom = `└${'─'.repeat(width - 2)}┘\n`;
   const resalt = top + (middle).repeat(height - 2) + bottom;
-  console.log(resalt);
   return resalt;
 }
 
